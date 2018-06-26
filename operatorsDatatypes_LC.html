@@ -1,0 +1,81 @@
+<!-- Shipping Charge Calculation
+Datax shipping is a company that ships goods from one port to another port. Shipping charges are computed based on the price of the item shipped.  Customers were unhappy with the computation method. Therefore the company decided to change the computation of charges to be based on the weight of the shipment. The new computation method computes shipping charges as cost per kg of shipment. Customers are to abide by it. -->
+
+<!-- Develop a program that gets the weight of the item and shipping cost per kg. Compute the shipping charge for the item based on weight and display it by clicking on compute button as shown in the screenshot.  -->
+
+<!-- UI Constraints : 
+The file name should be index.html.
+To compute shipping charge use (Total shipping charge= weight*cost).
+Refer sample screenshot for detailed specifications. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        #header {
+            border: 1px solid lightgrey;
+            margin: -8px -8px 0;
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <table style="width:100%">
+            <tr style="width:100%">
+                <td style="width:20%">
+                    <span>
+                        <img align="left" src="logo.jpeg" width="120px" height="120px">
+                    </span>
+                </td>
+                <td style="width: 60%;">
+                    <span>
+                        <center>
+                            <h1>DATAX Shipping Company</h1>
+                        </center>
+                    </span>
+                </td>
+                <td style="width: 40%; padding-bottom: 7%;padding-left:5%;">
+                    <span>
+                        <a href="#" id="signup">Sign up</a>
+                        <a href="#" id="login" style="padding-left:30px">Log in</a>
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- fill code here -->
+    <h3>Calculation of Shipping charge</h3>
+    <form>
+        Total Product Weight
+        <input type="text" id="weight">
+        <br> Shipping cost (per kg)
+        <input type="text" id="cost">
+        <br>
+        <button type="button" id="compute">Compute</button>
+        <br>
+    </form>
+    <div>
+        The total Shipment charge is
+        <div id="result" style="display:inline;"></div>
+    </div>
+
+</body>
+
+<script>
+
+    function compute() {
+        var itemWeight = document.getElementById("weight").value;
+        var itemCost = document.getElementById("cost").value;
+        var totalCost = itemWeight * itemCost;
+        document.getElementById("result").innerHTML = totalCost;
+    }
+    document.getElementById("compute").onclick = compute;
+
+</script>
+
+</html>

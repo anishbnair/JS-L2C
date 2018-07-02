@@ -71,8 +71,11 @@ Refer sample screenshot for detailed specifications. -->
 
     // function to calculate cost
     function compute() {
+        // get weight of the item
         var itemWeight = document.getElementById("weight").value;
+        // get cost of the item
         var itemCost = document.getElementById("cost").value;
+        // total cost
         var totalCost = itemWeight * itemCost;
         document.getElementById("result").innerHTML = totalCost;
     }
